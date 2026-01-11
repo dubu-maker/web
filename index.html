@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal clip comparison board and image notes."
+    />
+    <title>Clip Compare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Personal Lab</p>
+        <h1>Clip Compare</h1>
+        <p class="hero-lede">
+          Short, focused comparisons of streaming tests and lightweight renders.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#compare">Compare clips</a>
+          <a class="btn btn-ghost" href="#gallery">Image notes</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <span class="meta-label">Last update</span>
+            <span class="meta-value">Set your date</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-label">Clips</span>
+            <span class="meta-value" data-clip-count>2</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-label">Format</span>
+            <span class="meta-value">MP4 + JPG</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="compare" class="section compare">
+        <div class="section-head">
+          <h2>Side-by-side clips</h2>
+          <p>
+            Use the shared controls to align timing and quickly compare detail.
+          </p>
+        </div>
+
+        <div class="compare-controls" role="group" aria-label="Clip controls">
+          <button class="btn btn-primary" type="button" data-action="play">
+            Play all
+          </button>
+          <button class="btn btn-ghost" type="button" data-action="pause">
+            Pause all
+          </button>
+          <button class="btn btn-ghost" type="button" data-action="restart">
+            Restart
+          </button>
+          <label class="toggle">
+            <input type="checkbox" id="sync-toggle" checked />
+            <span>Sync time</span>
+          </label>
+        </div>
+
+        <div class="grid videos">
+          <article class="video-card" data-video-card>
+            <div class="card-head">
+              <span class="badge">Clip A</span>
+              <h3>Streaming test</h3>
+              <p>Notes about lighting, color, or compression artifacts.</p>
+            </div>
+            <video
+              src="assets/videos/clip-a.mp4"
+              poster="assets/images/clip-a.jpg"
+              controls
+              preload="metadata"
+              playsinline
+            ></video>
+          </article>
+
+          <article class="video-card" data-video-card>
+            <div class="card-head">
+              <span class="badge">Clip B</span>
+              <h3>Low-bitrate pass</h3>
+              <p>Second version for quick side-by-side review.</p>
+            </div>
+            <video
+              src="assets/videos/clip-b.mp4"
+              poster="assets/images/clip-b.jpg"
+              controls
+              preload="metadata"
+              playsinline
+            ></video>
+          </article>
+        </div>
+
+        <p class="note">
+          To add a third clip, duplicate a card and update the file names.
+          Missing files auto-hide.
+        </p>
+      </section>
+
+      <section id="gallery" class="section gallery">
+        <div class="section-head">
+          <h2>Image notes</h2>
+          <p>Drop in stills, thumbnails, or reference frames.</p>
+        </div>
+
+        <div class="grid images">
+          <figure class="image-card" data-image-card>
+            <img
+              src="assets/images/still-1.jpg"
+              alt="Still frame 1"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Scene 01</figcaption>
+          </figure>
+          <figure class="image-card" data-image-card>
+            <img
+              src="assets/images/still-2.jpg"
+              alt="Still frame 2"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Scene 02</figcaption>
+          </figure>
+          <figure class="image-card" data-image-card>
+            <img
+              src="assets/images/still-3.jpg"
+              alt="Still frame 3"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Scene 03</figcaption>
+          </figure>
+        </div>
+
+        <p class="note">
+          Replace or remove image cards to match what you upload.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Built on Render. Static, no login.</span>
+      <a href="#compare">Back to clips</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
